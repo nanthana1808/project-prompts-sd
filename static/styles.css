@@ -58,8 +58,8 @@ body {
   color: #c61e4e;
 }
 .navbar-home .logo-home img {
-  max-width: 40%; /* ปรับขนาดภาพตามที่คุณต้องการ */
-  height: auto; /* ให้สัดส่วนคงเดิม */
+  max-width: 40%; 
+  height: auto;
 }
 
 .content {

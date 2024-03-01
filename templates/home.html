@@ -1,11 +1,8 @@
 <!DOCTYPE html>
-<!-- Created By CodingLab - www.codinglabweb.com -->
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
     <title>Home</title>
-    <!-- Fontawesome CDN Link -->
-    <!-- Fontawesome CDN Link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <script src="{{ url_for('static', filename='main.js') }}"></script>
@@ -49,8 +46,6 @@
         </div>
         
         <button id="generate-btn" class="generate-btn" onclick="generatePrompt()">Generate</button>
-
-        
         </div>
       </div>
       
@@ -68,9 +63,7 @@
           <img id="result-image" src="" alt=" ">
           <button id="download-btn" onclick="downloadImage()"><i class="fa fa-download" aria-hidden="true"></i></button>
         </div>
-
       </div>
-      
     </div>
 
     <div class="dropdown-method-container">
@@ -110,7 +103,6 @@
       </select>
     </div>
 
-        <!-- Range Sliders with Labels and Textboxes -->
     <div class="slider-container">
       <div class="slider-group">
         <label for="step-slider">Step</label>
