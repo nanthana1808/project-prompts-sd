@@ -5,10 +5,17 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+
 }
 
 body {
-  background-color: #ffffff; 
+  background-color: #f3eeee; 
+}
+
+label {
+  font-size: 20px;
+  color: #15151a;
 }
 
 .banner {
@@ -191,16 +198,22 @@ nav .navbar .menu {
 /* Dropdown Model Container Styles */
 .dropdown-model {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; 
   align-items: left;
-  margin-top: 5%;
-  margin-left: 10%;
+  margin-top: 5%; 
+  margin-left: 15%;
+}
+
+.dropdown-container {
+  width: 1200px; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px; 
 }
 
 .dropdown-model label {
   margin-bottom: 10px;
-  font-weight: bold;
-  font-size: 20px;
 }
 
 .dropdown-model select {
@@ -208,14 +221,12 @@ nav .navbar .menu {
   border-radius: 5px;
   border: 1px solid #57575c;
   box-shadow: 1px 1px 1px #999;
-  width: 320px;
-  max-width: 100%;
   line-height: 1.5;
   appearance: none;
   cursor: pointer;
   background-color: #fff;
-  color: #ef5421;
-  font-weight: bold;
+  width: 30%; 
+  font-size: 16px;
 }
 
 .dropdown-model select:hover,
@@ -223,42 +234,66 @@ nav .navbar .menu {
   color: #ef5421;
 }
 
+#generate-btn {
+  text-align: center;
+  width: 10%; 
+  margin-top: 10px;
+  background-color: #ef5421;
+  color: #fff;
+  border: none;
+  padding: 15px 0;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 2px solid yellow;
+  transition: background-color 0.3s;
+}
+
+#generate-btn:hover {
+  background-color: #fa6d08;
+}
+
 
 
 .box-container {
   margin-top: 0;
+  margin-left: 15%;
 }
 
 .text-area-container {
   display: flex;
   justify-content: space-between;
-  align-items: center; /* ปรับให้ align ตรงกลางในแนวตั้ง */
-  margin-top: 20px; /* เพิ่มระยะห่างด้านบน */
+  align-items: center; 
+  margin-top: 20px; 
   margin-bottom: 5px;
-  margin-left: 10%;
-  width: 900px;
+  width: 1200px;
   font-size: 16px;
+
 }
 .text-area-container textarea {
-  width: 100%;
-  font-size: 16px;
+  width: 150%;
+  font-size: 20px;
+  font-weight: lighter;
+  padding: 10px;
 }
 
 .text-area-neprompt textarea {
   height: 50px;
-  font-size: 16px;
+  font-size: 20px;
+  padding: 10px;
 }
 
-.text-area-prompt {
-  width: 400px;
+.text-area-prompt,
+.text-area-neprompt {
+  width: 45%; /* Adjusted width for better responsiveness */
   position: relative;
   border-radius: 5px;
+  padding: 10px; /* Added padding for better appearance */
 }
 
-.text-area-neprompt {
-  width: 400px;
-  margin-bottom: 20px; /* เพิ่มระยะห่างด้านล่างของ text-area-neprompt */
-  position: relative;
+.text-area-neprompt textarea {
+  height: 70px;
+  font-size: 20px;
+  padding: 10px; /* Added padding for better appearance */
 }
 
 
@@ -274,23 +309,6 @@ nav .navbar .menu {
   height: 70px; /* ปรับความสูงตามที่ต้องการ */
 }
 
-#generate-btn {
-  position: absolute;
-  top: 28%;
-  margin-right: 30%;
-  right: 0;
-  transform: translateY(-50%);
-  background-color: #ef5421;
-  color: #fff;
-  border: none;
-  padding: 15px 40px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-#generate-btn:hover {
-  background-color: #fa6d08;
-}
 
 .convert-btn {
   display: flex;
@@ -305,16 +323,149 @@ nav .navbar .menu {
   background-color: #dbd148;
 }
 
+.box2-container {
+  margin-top: 0;
+  margin-left: 15%;
+
+}
+
+.dropdown-method-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: left;
+  margin-top: 20px;
+  width: 550px;
+  margin-bottom: 2%;
+}
+
+.dropdown-method-container label {
+  margin-bottom: 10px;
+}
+
+.dropdown-method-container select {
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #57575c;
+  box-shadow: 1px 1px 1px #999;
+  width: 550px;
+  max-width: 100%;
+  line-height: 1.5;
+  appearance: none;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.select:hover,
+.select:focus {
+  border-color: #8433db;
+}
+
+/* Slider Styles */
+.slider-container {
+  display: flex;
+  justify-content: flex-start; /* ปรับให้ Slider มีการจัดวางจากด้านซ้ายไปขวา */
+  align-items: left;
+  margin-top: 20px;
+}
+
+.slider-group {
+  text-align: center;
+  margin-right: 20px; /* ปรับระยะห่างระหว่าง Slider ให้มากขึ้น */
+}
+
+.slider {
+  width: 200px; /* ปรับความกว้างของ Slider เหลือน้อยลง */
+}
+
+.slider-value {
+  width: 70px;
+  height: 50px;
+  margin-top: 5px;
+  text-align: center;
+  font-size: 16px;
+}
+
+/* Move Labels to the Top */
+.slider-group label {
+  display: block;
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+/* Dropdown Size Container Styles */
+.dropdownsize-container {
+  display: flex;
+  align-items: left;
+  margin-top: 20px;
+}
+
+.size-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 20px;
+  width: 320px;
+}
+
+.size-group label {
+  display: block;
+  text-align: left;
+  margin-right: 10px; /* Add margin for better separation */
+}
+
+.size-group select {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #57575c;
+  box-shadow: 1px 1px 1px #999;
+  line-height: 1.5;
+  appearance: none;
+  cursor: pointer;
+  background-color: #fff;
+  width: 70px; /* Adjust the width according to your design */
+  font-size: 16px;
+}
+
+
+.seed-container {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  margin-top: 20px;
+}
+
+.seed-container label {
+  margin-bottom: 5px;
+}
+
+.seed-container input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #57575c;
+  box-shadow: 1px 1px 1px #999;
+  line-height: 1.5;
+  width: 450px;
+  max-width: 100%;
+  appearance: none;
+  font-size: 16px;
+}
+
+.box3-container {
+  margin-left: 15%;
+  position: relative; 
+  margin-top: 20px;
+}
+
 .image-container {
   display: flex;
-  justify-content: center; /* จัดวางตรงกลางทั้งแนวนอนและแนวตั้ง */
+  justify-content: center;
   align-items: center;
   width: 768px;
-  height: 320px;
-  margin-top: 550px;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  height: 512px;
+  margin-top: 20px; 
+  position: relative; 
   overflow: hidden;
   border: 2px solid #ccc;
   box-shadow: 0 4px 8px rgba(125, 124, 124, 0.1);
@@ -334,7 +485,7 @@ nav .navbar .menu {
 #download-btn {
   position: absolute;
   bottom: 10px;
-  right: 10px; 
+  right: 10px;
   padding: 10px 15px;
   background-color: #b6b6b6;
   color: #fff;
@@ -342,136 +493,7 @@ nav .navbar .menu {
   border-radius: 5px;
   cursor: pointer;
 }
+
 #download-btn:hover {
   background-color: #45a049;
-}
-
-.dropdown-method-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: left;
-  margin-left: 10%;
-  margin-top: 20px;
-  width: 320px;
-  margin-bottom: 2%;
-}
-
-.dropdown-method-container label {
-  margin-bottom: 10px;
-}
-
-.dropdown-method-container select {
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #57575c;
-  box-shadow: 1px 1px 1px #999;
-  width: 320px;
-  max-width: 100%;
-  line-height: 1.5;
-  appearance: none;
-  cursor: pointer;
-  background-color: #fff;
-}
-
-.select:hover,
-.select:focus {
-  border-color: #8433db;
-}
-
-/* Slider Styles */
-.slider-container {
-  display: flex;
-  justify-content: flex-start; /* ปรับให้ Slider มีการจัดวางจากด้านซ้ายไปขวา */
-  align-items: left;
-  margin-top: 20px;
-  margin-left: 10%;
-}
-
-.slider-group {
-  text-align: center;
-  margin-right: 20px; /* ปรับระยะห่างระหว่าง Slider ให้มากขึ้น */
-}
-
-.slider {
-  width: 100px; /* ปรับความกว้างของ Slider เหลือน้อยลง */
-}
-
-.slider-value {
-  width: 40px;
-  margin-top: 5px;
-  text-align: center;
-}
-
-/* Move Labels to the Top */
-.slider-group label {
-  display: block;
-  text-align: left;
-  margin-bottom: 5px;
-}
-
-/* Dropdown Size Container Styles */
-.dropdownsize-container {
-  display: flex;
-  align-items: left;
-  margin-top: 20px;
-  margin-left: 10%;
-}
-
-.size-group {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  align-items: left;
-  margin-right: 20px;
-  /* margin-left: 10%; */
-  width: 320px;
-}
-
-.size-group label {
-  display: block;
-  text-align: left; /* ปรับ text-align เป็น left */
-  margin-bottom: 5px;
-}
-
-.size-group select {
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #57575c;
-  box-shadow: 1px 1px 1px #999;
-  line-height: 1.5;
-  appearance: none;
-  cursor: pointer;
-  background-color: #fff;
-  margin-top: 5px;
-  width: 100px;
-}
-
-.size-group label {
-  font-size: 16px;
-}
-
-.seed-container {
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-  margin-top: 20px;
-  margin-left: 10%;
-  margin-bottom: 5%;
-}
-
-.seed-container label {
-  font-size: 16px;
-  margin-bottom: 5px;
-}
-
-.seed-container input {
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #57575c;
-  box-shadow: 1px 1px 1px #999;
-  line-height: 1.5;
-  width: 320px;
-  max-width: 100%;
-  appearance: none;
 }

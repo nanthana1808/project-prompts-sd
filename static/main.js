@@ -45,13 +45,18 @@ function convertPrompt() {
     });
 }
 
-// Function to make API request and update images on the webpage
 async function callTxt2ImgAPI() {
   const apiUrl = 'http://localhost:7860/sdapi/v1/txt2img';
 
+  const express = require('express');
+  const cors = require('cors');
+  const app = express();
+
+app.use(cors());
+
   // Get values from HTML elements
-  const prompt = document.getElementById('thai-prompt').value;
-  const negativePrompt = document.getElementById('in-neprompt').value;
+  const prompt = document.getElementById('english-prompt').value;
+  const negativePrompt = document.getElementById('out-neprompt').value;
   const samplerName = document.getElementById('method-type').value;
   const steps = parseInt(document.getElementById('step-value').value);
   const cfgScale = parseInt(document.getElementById('cfg-value').value);
@@ -85,10 +90,18 @@ async function callTxt2ImgAPI() {
 
     const result = await response.json();
 
-    // Update the image source with the base64 data of the first image
-    const resultImage = document.getElementById('result-image');
-    resultImage.src = `data:image/png;base64, ${result.images[0]}`;
+    console.log('API Response:', result); // Log the entire API response for debugging
 
+    // Check if the response is an object and has the expected structure
+    if (result && typeof result === 'object' && 'key' in result) {
+      const keyValue = result.key;
+
+      console.log('Value:', keyValue); // Log the value
+
+      // Now you can use the value as needed
+    } else {
+      console.error('Unexpected API response format:', result);
+    }
   } catch (error) {
     console.error('Error calling API:', error);
   }
