@@ -48,12 +48,6 @@ function convertPrompt() {
 async function callTxt2ImgAPI() {
   const apiUrl = 'http://localhost:7860/sdapi/v1/txt2img';
 
-  const express = require('express');
-  const cors = require('cors');
-  const app = express();
-
-app.use(cors());
-
   // Get values from HTML elements
   const prompt = document.getElementById('english-prompt').value;
   const negativePrompt = document.getElementById('out-neprompt').value;
@@ -82,6 +76,7 @@ app.use(cors());
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(requestData),
+
     });
 
     if (!response.ok) {
@@ -90,8 +85,9 @@ app.use(cors());
 
     const result = await response.json();
 
-    console.log('API Response:', result); // Log the entire API response for debugging
-
+    console.log('API Response:', result); 
+    var dataurl = "data:image/png;base64," + result.images[0]
+    document.getElementById("result-image").src = dataurl
     // Check if the response is an object and has the expected structure
     if (result && typeof result === 'object' && 'key' in result) {
       const keyValue = result.key;
@@ -106,3 +102,15 @@ app.use(cors());
     console.error('Error calling API:', error);
   }
 }
+
+
+function downloadImage() {
+  const resultImage = document.getElementById('result-image');
+  const link = document.createElement('a');
+  link.href = resultImage.src;
+  link.download = 'result_image.png';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+

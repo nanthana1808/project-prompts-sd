@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
+:root {
+  --background-light: #f3eeee;
+  --background-dark: #202020;
+  --color-light: #202020;
+  --color-dark: #ffffff;
+}
+
+
 * {
   margin: 0;
   padding: 0;
@@ -11,6 +19,11 @@
 
 body {
   background-color: #f3eeee; 
+}
+
+.dark-mode {
+  background-color: #141414;
+  color: white;
 }
 
 label {
@@ -26,7 +39,7 @@ label {
   background-position: center;
 }
 .navbar-home {
-  font-size: 17px;
+  font-size: 24px;
   width: 85%;
   margin: auto;
   padding: 35px 0;
@@ -54,7 +67,7 @@ label {
 }
 .navbar-home .menu li a {
   color: #000000;
-  font-size: 17px;
+  font-size: 24px;
   font-weight: 500;
   text-decoration: none;
   transition: color 0.3s;
@@ -124,7 +137,7 @@ nav {
   left: 0;
   top: 0;
   width: 100%;
-  height: 75px;
+  height: 100px;
   background: #ffffff;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
@@ -164,7 +177,7 @@ nav .navbar .menu {
 
 .navbar .menu li a {
   color: #000000;
-  font-size: 17px;
+  font-size: 24px;
   font-weight: 500;
   text-decoration: none;
   transition: color 0.3s;
@@ -219,8 +232,8 @@ nav .navbar .menu {
 .dropdown-model select {
   padding: 10px;
   border-radius: 5px;
-  border: 1px solid #57575c;
-  box-shadow: 1px 1px 1px #999;
+  border: 2px solid #d57220;
+  box-shadow: 2px 2px 2px #d57220;
   line-height: 1.5;
   appearance: none;
   cursor: pointer;
@@ -235,21 +248,21 @@ nav .navbar .menu {
 }
 
 #generate-btn {
+  font-size: 18px;
   text-align: center;
-  width: 10%; 
+  width: 15%; 
   margin-top: 10px;
-  background-color: #ef5421;
+  background-color: #f24e18;
   color: #fff;
   border: none;
   padding: 15px 0;
   border-radius: 5px;
   cursor: pointer;
-  border: 2px solid yellow;
   transition: background-color 0.3s;
 }
 
 #generate-btn:hover {
-  background-color: #fa6d08;
+  background-color: #ff1111;
 }
 
 
@@ -266,19 +279,21 @@ nav .navbar .menu {
   margin-top: 20px; 
   margin-bottom: 5px;
   width: 1200px;
-  font-size: 16px;
+  font-size: 18px;
 
 }
 .text-area-container textarea {
   width: 150%;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: lighter;
   padding: 10px;
+  border: 2px solid #d57220;
+  box-shadow: 2px 2px 2px #d57220;
 }
 
 .text-area-neprompt textarea {
   height: 50px;
-  font-size: 20px;
+  font-size: 22px;
   padding: 10px;
 }
 
@@ -292,7 +307,7 @@ nav .navbar .menu {
 
 .text-area-neprompt textarea {
   height: 70px;
-  font-size: 20px;
+  font-size: 22px;
   padding: 10px; /* Added padding for better appearance */
 }
 
@@ -320,7 +335,7 @@ nav .navbar .menu {
   cursor: pointer;
 }
 .convert-btn:hover {
-  background-color: #dbd148;
+  background-color: #3f51ef;
 }
 
 .box2-container {
@@ -347,8 +362,8 @@ nav .navbar .menu {
   font-size: 16px;
   padding: 10px;
   border-radius: 5px;
-  border: 1px solid #57575c;
-  box-shadow: 1px 1px 1px #999;
+  border: 2px solid #d57220;
+  box-shadow: 1px 1px 1px #d57220;
   width: 550px;
   max-width: 100%;
   line-height: 1.5;
@@ -357,10 +372,6 @@ nav .navbar .menu {
   background-color: #fff;
 }
 
-.select:hover,
-.select:focus {
-  border-color: #8433db;
-}
 
 /* Slider Styles */
 .slider-container {
@@ -380,6 +391,8 @@ nav .navbar .menu {
 }
 
 .slider-value {
+  border: 2px solid #d57220;
+  box-shadow: 1px 1px 1px #d57220;
   width: 70px;
   height: 50px;
   margin-top: 5px;
@@ -418,8 +431,8 @@ nav .navbar .menu {
 .size-group select {
   padding: 10px;
   border-radius: 5px;
-  border: 1px solid #57575c;
-  box-shadow: 1px 1px 1px #999;
+  border: 2px solid #d57220;
+  box-shadow: 1px 1px 1px #d57220;
   line-height: 1.5;
   appearance: none;
   cursor: pointer;
@@ -443,9 +456,8 @@ nav .navbar .menu {
 .seed-container input {
   padding: 10px;
   border-radius: 5px;
-  border: 1px solid #57575c;
-  box-shadow: 1px 1px 1px #999;
-  line-height: 1.5;
+  border: 2px solid #d57220;
+  box-shadow: 1px 1px 1px #d57220;
   width: 450px;
   max-width: 100%;
   appearance: none;
@@ -461,9 +473,9 @@ nav .navbar .menu {
 .image-container {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: auto;
   width: 768px;
-  height: 512px;
+  height: 420px;
   margin-top: 20px; 
   position: relative; 
   overflow: hidden;
@@ -475,12 +487,15 @@ nav .navbar .menu {
 
 #result-image {
   max-width: 100%;
+  overflow: scroll;
   height: auto;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+
 
 #download-btn {
   position: absolute;
@@ -497,3 +512,4 @@ nav .navbar .menu {
 #download-btn:hover {
   background-color: #45a049;
 }
+
