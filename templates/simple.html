@@ -2,15 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Test Register.js</title>
+    <title>Login Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js" defer></script>
     <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js" defer></script>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-    <script src="static\register.js" defer type="module"></script>
+    <script src="static/register.js" defer type="module"></script>
 </head>
 <body>
 
-    <button id="google-login-btn">Test Google Login</button>
+    <div class="login-form">
+        <h2>Login</h2>
+        <form action="#">
+            <div class="input-login">
+                <span>Username</span>
+                <input type="text" name="username" required>
+            </div>
+            <div class="input-login">
+                <span>Password</span>
+                <input type="password" name="password" required>
+            </div>
+            <div class="remember-me">
+                <label>
+                    <input type="checkbox"> Remember me?
+                </label>
+            </div>
+            <div class="input-login">
+                <input type="submit" value="Submit" id="submit-button">
+            </div>
+            <div class="input-login">
+                <p>Don't have an account? <a href="#">Sign up</a></p>
+            </div>
+            <div class="input-login">
+                <button id="google-login-btn">Test Google Login</button>
+            </div>
+        </form>
+    </div>
 
 </body>
 </html>

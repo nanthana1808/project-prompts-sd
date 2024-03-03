@@ -545,67 +545,34 @@ nav .navbar .menu {
 }
 
 
-
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f3eeee;
+}
 
 .login-form {
-  position: relative;
-  width: 100%;
-  height: 100vh;
+  background-color: #fff;
+  padding: 60px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 800px;
   display: flex;
-}
-
-.image {
-  position: relative;
-  width: 50%;
-  height: 100%;
-}
-
-.image:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  mix-blend-mode: screen;
-  opacity: 100%;
-}
-
-.image img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.form-content {
-  display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  width: 50%;
-  height: 100%;
+  justify-content: center;
+  border: 2px solid #151414;
 }
 
-.form {
-  width: 50%;
-}
-
-.form h2 {
-  font-weight: 600;
-  font-size: 1.5em;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  border-bottom: 5px solid #ff6600;
-  letter-spacing: 1px;
-  display: inline-block;
+.login-form h2 {
   color: #001c2a;
 }
 
 .input-login {
   margin-bottom: 20px;
+  width: 100%;
 }
 
 .input-login span {
@@ -617,7 +584,8 @@ nav .navbar .menu {
 }
 
 .input-login input {
-  width: 100%;
+  width: 400px;  /* ปรับขนาดตามที่ต้องการ */
+  box-sizing: border-box;  /* เพิ่มบรรทัดนี้เพื่อให้ความกว้างรวม padding และ border */
   padding: 10px 20px;
   outline: none;
   font-weight: 400;
@@ -626,6 +594,22 @@ nav .navbar .menu {
   background: transparent;
   border-radius: 30px;
   border: 1px solid #001c2a;
+}
+
+
+
+#submit-button,
+#google-login-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50px;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  padding: 10px;
 }
 
 #submit-button {
@@ -639,7 +623,6 @@ nav .navbar .menu {
 
 #submit-button:hover {
   background-color: #cb5201;
-
 }
 
 #submit-button:active {
@@ -658,7 +641,11 @@ nav .navbar .menu {
 }
 
 .input-login p a {
-  color: #ff6600
+  color: #ff6600;
+}
+
+#google-login-btn:hover {
+  background-color: #2a56c6;
 }
 
 .fa-google {
@@ -667,21 +654,4 @@ nav .navbar .menu {
   background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
-  margin-right: 20px;
-}
-
-#google-login-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 300px;
-  height: 50px;
-  border-radius: 20px;
-  background-color: #ffffff; 
-  color: #000000; 
-  font-size: 16px; 
-  cursor: pointer;
-}
-#google-login-btn:hover {
-  background-color: #2a56c6; 
 }

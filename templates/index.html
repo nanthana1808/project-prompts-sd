@@ -2,61 +2,58 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Test Register.js</title>
+    <title>Login Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js" defer></script>
     <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js" defer></script>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-    <script src="static\register.js" defer type="module"></script>
+    <script src="static/register.js" defer type="module"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
   <nav>
-    <div class="banner">
-      <div class="navbar-home">
-        <div class="logo-home"><a href="#"><img src="static\img\logo.png" alt="GenPrompt Logo"></a></div>
-        <ul class="menu">
-          <li><a href="/HOME">Home</a></li>
-          <li><a href="/ABOUT">About</a></li>
-          <li><a href="/SIMPLE">Contact</a></li>
-        </ul>
-      </div>
-  </nav>
-  <section class="login-form">
-    <div class="image">
-      <img src="static\img\gen-banner.png" alt="background image">
+    <div class="navbar">
+      <div class="logo"><a href="#"><img src="/static/img/logo.png" alt=""></a></div>
+
+      <ul class="menu">
+        <li><a href="/" id="home">HOME</a></li>
+        <li><a href="/ABOUT" id="about">ABOUT</a></li>
+        <li><a href="#Contact" id="contact">CONTACT</a></li>
+        <li><a href="#User"id="userEmail"></a></li>
+      </ul>
     </div>
-    <div class="form-content">
-    <div class="form">
-    <h2>Login</h2>
-    <form action="#">
-                        <div class="input-login">
-                            <span>Username</span>
-                            <input type="text" name="username" required>
-                        </div>
-                        <div class="input-login">
-                            <span>Password</span>
-                            <input type="password" name="password" required>
-                        </div>
-                        <div class="remember-me">
-                            <label>
-                                <input type="checkbox"> Remember me?
-                            </label>
-                        </div>
-                        <div class="input-login">
-                            <input type="submit" value="Submit" id="submit-button">
-                        </div>
+  </nav>
+    <div class="login-container">
+      <div class="login-form">
+          <h2>Login</h2>
+          <form action="#">
+              <div class="input-login">
+                  <span>Username</span>
+                  <input type="text" name="username" placeholder="Username..." required>
+              </div>
+              <div class="input-login">
+                  <span>Password</span>
+                  <input type="password" name="password" placeholder="Password...">
+              </div>
+              <div class="remember-me">
+                  <label>
+                      <input type="checkbox"> Remember me?
+                  </label>
+              </div>
+              <div class="input-login">
+                  <input type="submit" value="Submit" id="submit-button">
+              </div>
+              <div class="input-login">
+                  <p>Don't have an account? <a href="#">Sign up</a></p>
+              </div>
+              <div class="input-login">
+                <button id="google-login-btn">
+                  <i class="fab fa-google fa-2x"></i> Login with Google
+                </button>
+                
+              </div>
+          </form>
+      </div>
+    </div>
 
-                        <div class="input-login">
-                            <p>Don't have an account? <a href="#">Sign up</a></p>
-                        </div>
-
-                        <div class="input-login">
-                          <button id="google-login-btn">Test Google Login</button>
-                        </div>
-                    </form>
-
-                </div>
-            </div>
-        </section>
-
-    </body>
+</body>
 </html>

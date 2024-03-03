@@ -16,24 +16,26 @@ const auth = getAuth(app);
 auth.languageCode = 'en'
 const provider = new GoogleAuthProvider();
 
-const googleLogin = document.getElementById("google-login-btn");
-googleLogin.addEventListener("click", function () {
-    console.log("Google button clicked");
-    signInWithPopup(auth, provider)
-      .then((result) => {
-        const credential = GoogleAuthProvider.credentialFromResult(result);
-        // const token = credential.accessToken;
-        const user = result.user;
-        console.log(user);
-        window.location.replace("/HOME")
+document.addEventListener("DOMContentLoaded", function () {
+    const googleLogin = document.getElementById("google-login-btn");
 
-        
-      }).catch((error) => {
-        console.error('Error during Google login:', error);
-        const errorCode = error.code;
-        const errorMessage = error.message;
-      });
+    googleLogin.addEventListener("click", function () {
+        console.log("Google button clicked");
+        signInWithPopup(auth, provider)
+            .then((result) => {
+                const credential = GoogleAuthProvider.credentialFromResult(result);
+                const user = result.user;
+                console.log(user);
+                window.location.replace("/HOME");
+            })
+            .catch((error) => {
+                console.error('Error during Google login:', error);
+                const errorCode = error.code;
+                const errorMessage = error.message;
+            });
     });
+});
+
 
 function updateUserProfile(user) {
     const userEmail = user.email;
