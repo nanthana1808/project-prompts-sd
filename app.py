@@ -43,6 +43,10 @@ def index():
 def home():
     return render_template('home.html')
 
+@app.route('/ABOUT')
+def about():
+    return render_template('about.html')
+
 # แปลง prompt จากภาษาไทยเป็นภาษาอังกฤษ
 def translate(thai_prompt, data):
     translated_words = [data.get(word.strip(), word.strip()) for word in thai_prompt.split(',')]

@@ -45,6 +45,23 @@ function convertPrompt() {
     });
 }
 
+// var myIndex = 0;
+// carousel();
+
+// function carousel() {
+//   var i;
+//   var x = document.getElementsByClassName("mySlides");
+//   for (i = 0; i < x.length; i++) {
+//     x[i].style.display = "none";
+//   }
+//   myIndex++;
+//   if (myIndex > x.length) {
+//     myIndex = 1;
+//   }
+//   x[myIndex - 1].style.display = "block";
+//   setTimeout(carousel, 3000);
+// }
+
 async function callTxt2ImgAPI() {
   const apiUrl = 'http://localhost:7860/sdapi/v1/txt2img';
 
@@ -76,7 +93,6 @@ async function callTxt2ImgAPI() {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(requestData),
-
     });
 
     if (!response.ok) {
@@ -85,16 +101,13 @@ async function callTxt2ImgAPI() {
 
     const result = await response.json();
 
-    console.log('API Response:', result); 
+    console.log('API Response:', result);
     var dataurl = "data:image/png;base64," + result.images[0]
     document.getElementById("result-image").src = dataurl
-    // Check if the response is an object and has the expected structure
+
     if (result && typeof result === 'object' && 'key' in result) {
       const keyValue = result.key;
-
-      console.log('Value:', keyValue); // Log the value
-
-      // Now you can use the value as needed
+      console.log('Value:', keyValue);
     } else {
       console.error('Unexpected API response format:', result);
     }
@@ -102,7 +115,6 @@ async function callTxt2ImgAPI() {
     console.error('Error calling API:', error);
   }
 }
-
 
 function downloadImage() {
   const resultImage = document.getElementById('result-image');

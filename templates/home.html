@@ -12,12 +12,13 @@
 
     <nav>
       <div class="navbar">
-        <div class="logo"><a href="#"><img src="static\img\logo.png" alt="GenPrompt Logo"></a></div>
+        <div class="logo"><a href="#"><img src="/static/img/logo.png" alt=""></a></div>
+
         <ul class="menu">
           <li><a href="/" id="home">HOME</a></li>
-          <li><a href="#About" id="about">ABOUT</a></li>
+          <li><a href="/ABOUT" id="about">ABOUT</a></li>
           <li><a href="#Contact" id="contact">CONTACT</a></li>
-          <li><a href="#User" id="user">USER</a></li>
+          <li><a href="#User"id="userEmail"></a></li>
         </ul>
       </div>
     </nav>
@@ -37,7 +38,7 @@
       <div class="text-area-container">
         <div class="text-area-prompt">
           <label for="thai-prompt">Thai Prompt</label>
-          <textarea id="thai-prompt" name="thai-prompt" rows="5" cols="33" placeholder="เช่น 1 ผู้หญิง, ยิ้ม, ผมสั้น, ผมสีชมพู, ..."></textarea>
+          <textarea id="thai-prompt" name="thai-prompt" rows="5" cols="33" placeholder="เช่น 1 ผู้หญิง, ยิ้ม, ผมสั้น, ผมสีชมพู,..."></textarea>
         </div>
 
         <button id="convert-btn" class="convert-btn" onclick="convertPrompt()"><i class="fas fa-paper-plane"></i></button>
@@ -145,6 +146,14 @@
       </div>
     </div>
   </div>
+
+<footer class="about-footer">
+    <a href="#"><i class="fa fa-facebook-official"></i></a>
+    <a href="#"><i class="fa fa-pinterest-p"></i></a>
+    <a href="#"><i class="fa fa-twitter"></i></a>
+    <a href="#"><i class="fa fa-flickr"></i></a>
+    <a href="#"><i class="fa fa-linkedin"></i></a>
+</footer>
 
 
   <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
