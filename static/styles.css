@@ -213,8 +213,8 @@ nav .navbar .menu {
   display: flex;
   flex-direction: column; 
   align-items: left;
-  margin-top: 5%; 
-  margin-left: 15%;
+  margin-top: 7%; 
+  margin-left: 14%;
 }
 
 .dropdown-container {
@@ -222,11 +222,11 @@ nav .navbar .menu {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 20px; 
+  margin-top: 10px; 
 }
 
 .dropdown-model label {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .dropdown-model select {
@@ -269,7 +269,7 @@ nav .navbar .menu {
 
 .box-container {
   margin-top: 0;
-  margin-left: 15%;
+  margin-left: 14%;
 }
 
 .text-area-container {
@@ -299,16 +299,16 @@ nav .navbar .menu {
 
 .text-area-prompt,
 .text-area-neprompt {
-  width: 45%; /* Adjusted width for better responsiveness */
+  width: 45%; 
   position: relative;
   border-radius: 5px;
-  padding: 10px; /* Added padding for better appearance */
+  padding: 10px;
 }
 
 .text-area-neprompt textarea {
   height: 70px;
   font-size: 22px;
-  padding: 10px; /* Added padding for better appearance */
+  padding: 10px; 
 }
 
 
@@ -364,7 +364,7 @@ nav .navbar .menu {
   border-radius: 5px;
   border: 2px solid #d57220;
   box-shadow: 1px 1px 1px #d57220;
-  width: 550px;
+  width: 400px;
   max-width: 100%;
   line-height: 1.5;
   appearance: none;
@@ -391,8 +391,6 @@ nav .navbar .menu {
 }
 
 .slider-value {
-  border: 2px solid #d57220;
-  box-shadow: 1px 1px 1px #d57220;
   width: 70px;
   height: 50px;
   margin-top: 5px;
@@ -458,14 +456,14 @@ nav .navbar .menu {
   border-radius: 5px;
   border: 2px solid #d57220;
   box-shadow: 1px 1px 1px #d57220;
-  width: 450px;
+  width: 400px;
   max-width: 100%;
   appearance: none;
   font-size: 16px;
 }
 
 .box3-container {
-  margin-left: 15%;
+  margin-left: 8%;
   position: relative; 
   margin-top: 20px;
 }
@@ -475,7 +473,7 @@ nav .navbar .menu {
   justify-content: center;
   align-items: auto;
   width: 768px;
-  height: 420px;
+  height: 512px;
   margin-top: 20px; 
   position: relative; 
   overflow: hidden;
@@ -487,14 +485,13 @@ nav .navbar .menu {
 
 #result-image {
   max-width: 100%;
-  overflow: scroll;
+  overflow: auto;
   height: auto;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
 
 
 #download-btn {
@@ -513,3 +510,12 @@ nav .navbar .menu {
   background-color: #45a049;
 }
 
+.mixbox-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Adjust alignment according to your design */
+  margin-top: 20px;
+  width: 1400px;
+  margin-left: 5%;
+  margin-bottom: 5%;
+}
