@@ -15,14 +15,15 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
-  const googleLogin = document.getElementById("google-login-btn");
-  googleLogin.addEventListener("click", function () {
+const googleLogin = document.getElementById("google-login-btn");
+googleLogin.addEventListener("click", function () {
     signInWithPopup(auth, provider)
       .then((result) => {
         const credential = GoogleAuthProvider.credentialFromResult(result);
+        // const token = credential.accessToken;
         const user = result.user;
         console.log(user);
-        window.location.href = "templates/home.html";
+        window.location.href = "../home.html";
 
         
       }).catch((error) => {
@@ -31,6 +32,12 @@ const provider = new GoogleAuthProvider();
         const errorMessage = error.message;
       });
     });
+
+function updateUserProfile(user) {
+    const userEmail = user.email;
+
+    document.getElementById("userEmail").textContent = userEmail;
+}
 
 
 

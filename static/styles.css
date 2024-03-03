@@ -604,11 +604,11 @@ nav .navbar .menu {
   color: #001c2a;
 }
 
-.input {
+.input-login {
   margin-bottom: 20px;
 }
 
-.input span {
+.input-login span {
   font-size: 16px;
   margin-bottom: 5px;
   color: #001c2a;
@@ -616,7 +616,7 @@ nav .navbar .menu {
   letter-spacing: 1px;
 }
 
-.input input {
+.input-login input {
   width: 100%;
   padding: 10px 20px;
   outline: none;
@@ -653,11 +653,35 @@ nav .navbar .menu {
   font-weight: 400;
 }
 
-.input p {
+.input-login p {
   color: #001c2a;
 }
 
-.input p a {
+.input-login p a {
   color: #ff6600
 }
 
+.fa-google {
+  background: conic-gradient(from -45deg, #ea4335 110deg, #4285f4 90deg 180deg, #34a853 180deg 270deg, #fbbc05 270deg) 73% 55%/150% 150% no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  margin-right: 20px;
+}
+
+#google-login-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 50px;
+  border-radius: 20px;
+  background-color: #ffffff; 
+  color: #000000; 
+  font-size: 16px; 
+  cursor: pointer;
+}
+#google-login-btn:hover {
+  background-color: #2a56c6; 
+}
