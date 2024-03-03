@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-   <meta charset="UTF-8">
-   <title>Visualization of Prompts Data on Stable Diffusion Model</title>
-   <link rel="stylesheet" href="style.css">
-   <script src="{{ url_for('static', filename='register.js') }}" defer type="module"></script>
-   <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   </head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Register.js</title>
+    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js" defer></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="static\register.js" defer type="module"></script>
+</head>
 <body>
   <nav>
     <div class="banner">
@@ -17,7 +16,7 @@
         <ul class="menu">
           <li><a href="/HOME">Home</a></li>
           <li><a href="/ABOUT">About</a></li>
-          <li><a href="#Contact">Contact</a></li>
+          <li><a href="/SIMPLE">Contact</a></li>
         </ul>
       </div>
   </nav>
@@ -51,9 +50,7 @@
                         </div>
 
                         <div class="input-login">
-                          <button id="google-login-btn" class="google-button">
-                            <i class="fab fa-google fa-2x"></i> Login with Google
-                          </button>
+                          <button id="google-login-btn">Test Google Login</button>
                         </div>
                     </form>
 

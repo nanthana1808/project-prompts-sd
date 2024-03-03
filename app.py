@@ -47,6 +47,11 @@ def home():
 def about():
     return render_template('about.html')
 
+@app.route('/SIMPLE')
+def simple():
+    return render_template('simple.html')
+
+
 # แปลง prompt จากภาษาไทยเป็นภาษาอังกฤษ
 def translate(thai_prompt, data):
     translated_words = [data.get(word.strip(), word.strip()) for word in thai_prompt.split(',')]
