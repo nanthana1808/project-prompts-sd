@@ -27,10 +27,11 @@ label {
 .banner {
   width: 100%;
   height: 100vh;
-  /* background: linear-gradient(rgba(227, 227, 227, 0.75),rgba(106, 106, 106, 0.75)), url('/static/img/gen-banner.png') center/cover; */
+  background: linear-gradient(rgba(227, 227, 227, 0.75),rgba(106, 106, 106, 0.75)), url('/static/img/gen-banner.png') center/cover;
   background-size: cover;
   background-position: center;
 }
+
 .navbar-home {
   font-size: 24px;
   width: 85%;
@@ -584,8 +585,8 @@ nav .navbar .menu {
 }
 
 .input-login input {
-  width: 400px;  /* ปรับขนาดตามที่ต้องการ */
-  box-sizing: border-box;  /* เพิ่มบรรทัดนี้เพื่อให้ความกว้างรวม padding และ border */
+  width: 400px;  
+  box-sizing: border-box; 
   padding: 10px 20px;
   outline: none;
   font-weight: 400;
@@ -598,8 +599,7 @@ nav .navbar .menu {
 
 
 
-#submit-button,
-#google-login-btn {
+#submit-button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -643,9 +643,21 @@ nav .navbar .menu {
 .input-login p a {
   color: #ff6600;
 }
+#google-login-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50px;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  padding: 20px;
+}
 
 #google-login-btn:hover {
-  background-color: #2a56c6;
+  background-color: #9ca19c;
 }
 
 .fa-google {
