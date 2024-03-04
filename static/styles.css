@@ -657,7 +657,7 @@ nav .navbar .menu {
 }
 
 #google-login-btn:hover {
-  background-color: #9ca19c;
+  background-color: #f6d632;
 }
 
 .fa-google {
@@ -667,3 +667,5 @@ nav .navbar .menu {
   color: transparent;
   -webkit-text-fill-color: transparent;
 }
+
+

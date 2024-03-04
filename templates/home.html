@@ -21,7 +21,9 @@
           <li><a href="/" id="home">HOME</a></li>
           <li><a href="/ABOUT" id="about">ABOUT</a></li>
           <li><a href="#Contact" id="contact">CONTACT</a></li>
-          <li><a href="#User"id="userEmail"></a></li>
+          <li><a id="userName"></a></li>
+          <li><a id="userEmail"></a></li>
+          <img id="userProfilePicture">
         </ul>
       </div>
     </nav>
@@ -29,13 +31,14 @@
       <label for="model-type">Model</label>
       <div class="dropdown-container">
         <select id="model-type" name="model-type">
-          <option value="divineanimemix_V2.safetensors">divineanimemix_V2.safetensors</option>
-          <option value="henmixReal_v5c.safetensors">henmixReal_v5c.safetensors</option>
-          <option value="majicmixRealistic_v7.safetensors">majicmixRealistic_v7.safetensors</option>
+          <option value="divineanimemix_V2.safetensors [21e8ae2ff3]">divineanimemix_V2.safetensors</option>
+          <option value="henmixReal_v5c.safetensors [b2eb92023a]">henmixReal_v5c.safetensors</option>
+          <option value="majicmixRealistic_v7.safetensors [7c819b6d13]">majicmixRealistic_v7.safetensors</option>
         </select>
         <button id="generate-btn" onclick="callTxt2ImgAPI()">Generate</button>
       </div>
     </div>
+    
 
     <div class="box-container">
       <div class="text-area-container">

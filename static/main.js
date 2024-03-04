@@ -74,6 +74,7 @@ async function callTxt2ImgAPI() {
   const height = parseInt(document.getElementById('height-dropdown').value);
   const width = parseInt(document.getElementById('width-dropdown').value);
   const seed = parseInt(document.getElementById('seed').value);
+  const checkpointName = document.getElementById('model-type').value;
 
   const requestData = {
     prompt: prompt,
@@ -83,7 +84,8 @@ async function callTxt2ImgAPI() {
     cfg_scale: cfgScale,
     height: height,
     width: width,
-    seed: seed
+    seed: seed,
+    hr_checkpoint_name: checkpointName
   };
 
   try {

@@ -1,6 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
-import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
-
+import { getAuth, GoogleAuthProvider, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyAhV_j9bJ_9Jb8aFB3MD7HV7cbtXeHL4_Q",
@@ -9,28 +8,36 @@ const firebaseConfig = {
     storageBucket: "login-e9fab.appspot.com",
     messagingSenderId: "226958724103",
     appId: "1:226958724103:web:bbe71c75f4575741b0eea2"
-  };
-  
-  // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig, 'myApp');
 const auth = getAuth(app);
 
 function updateUserProfile(user) {
-    const userEmail = user ? user.email : "Guest"; // Set to "Guest" if the user is not logged in
+    // const userName = user ? user.displayName : "Guest";
+    const userEmail = user ? user.email : "Guest";
+    const userProfilePicture = user ? user.photoURL : "";
+    console.log(userEmail)
 
-    // Update the HTML element with id "userEmail" to display the user's email
-    const userEmailElement = document.getElementById("userEmail");
-    if (userEmailElement) {
-        userEmailElement.textContent = userEmail;
-    }
+    document.getElementById("userName").textContent = userName
+    document.getElementById("userEmail").textContent = userEmail;
+    document.getElementById("userProfilePicture").src = userProfilePicture;
 }
 
 // Listen for changes in the authentication state
 onAuthStateChanged(auth, (user) => {
-    updateUserProfile(user);
+    if (user) {
+        updateUserProfile(user);
+        const uid = user.uid;
+        return uid;
+    } else {
+        alert("Create Account & login");
+    }
 });
 
 // Optionally, you can use updateUserProfile() to update the user's profile immediately after the page loads
 document.addEventListener("DOMContentLoaded", function () {
     updateUserProfile(auth.currentUser);
 });
+
