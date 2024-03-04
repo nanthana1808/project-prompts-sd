@@ -63,6 +63,9 @@ function convertPrompt() {
 // }
 
 async function callTxt2ImgAPI() {
+  // แสดง popup ก่อนทำการเรียก API
+  document.getElementById('loading-popup').style.display = 'block';
+
   const apiUrl = 'http://localhost:7860/sdapi/v1/txt2img';
 
   // Get values from HTML elements
@@ -115,8 +118,13 @@ async function callTxt2ImgAPI() {
     }
   } catch (error) {
     console.error('Error calling API:', error);
+  } finally {
+    // ซ่อน popup เมื่อ API เสร็จสิ้น
+    document.getElementById('loading-popup').style.display = 'none';
   }
 }
+
+
 
 function downloadImage() {
   const resultImage = document.getElementById('result-image');

@@ -669,3 +669,31 @@ nav .navbar .menu {
 }
 
 
+.loading-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  z-index: 1000;
+}
+
+.loading-spinner {
+  border: 8px solid #ffd52d;
+  border-top: 8px solid #3498db;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
