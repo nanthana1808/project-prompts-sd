@@ -16,25 +16,19 @@ const auth = getAuth(app);
 
 function updateUserProfile(user) {
     // const userName = user ? user.displayName : "Guest";
-    const userEmail = user ? user.email : "Guest";
-    const userProfilePicture = user ? user.photoURL : "";
+    const userEmail = user.email != null ? user.email : "Guest";
     console.log(userEmail)
 
-    document.getElementById("userName").textContent = userName
     document.getElementById("userEmail").textContent = userEmail;
-    document.getElementById("userProfilePicture").src = userProfilePicture;
 }
 
 // Listen for changes in the authentication state
-onAuthStateChanged(auth, (user) => {
+var user = JSON.parse(localStorage.getItem("user"))
     if (user) {
         updateUserProfile(user);
-        const uid = user.uid;
-        return uid;
     } else {
         alert("Create Account & login");
     }
-});
 
 // Optionally, you can use updateUserProfile() to update the user's profile immediately after the page loads
 document.addEventListener("DOMContentLoaded", function () {

@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 const token = credential.accessToken;
                 const user = result.user;
                 console.log(user);
+                localStorage.setItem("user", JSON.stringify(user))
                 window.location.replace("/HOME");
             })
             .catch((error) => {
