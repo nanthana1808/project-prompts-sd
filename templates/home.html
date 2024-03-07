@@ -21,17 +21,11 @@
           <li><a href="/" id="home">HOME</a></li>
           <li><a href="/ABOUT" id="about">ABOUT</a></li>
           <li><a href="#Contact" id="contact">CONTACT</a></li>
-          <li>
-            <div class="dropdown-user">
-              <a class="userbtn" onclick="toggleDropdown()" id="userEmail"><i class="fas fa-caret-down" aria-hidden="true"></i></a>
-              <div class="dropuser-content" id="myDropdown">
-                <a href="/" onclick="logout()">Logout</a>
-              </div>
-            </div>
-          </li>
+          <li><a id="userEmail"></a></li>
         </ul>
-      </div>
     </nav>
+
+    
     <div id="loading-popup" class="loading-popup">
       <div class="loading-spinner"></div>
       <p>กำลังรันโมเดล...</p>
