@@ -56,7 +56,7 @@ async function callTxt2ImgAPI() {
 
   // Get values from HTML elements
   const prompt = document.getElementById('english-prompt').value;
-  const negativePrompt = document.getElementById('out-neprompt').value;
+  const negativePrompt = document.getElementById('neprompt-content').value;
   const samplerName = document.getElementById('method-type').value;
   const steps = parseInt(document.getElementById('step-value').value);
   const cfgScale = parseInt(document.getElementById('cfg-value').value);
@@ -111,3 +111,39 @@ async function callTxt2ImgAPI() {
 }
 
 
+function logout() {
+
+  // ลบ localStorage ที่เก็บข้อมูลผู้ใช้หลังจากล็อกเอาท์
+  localStorage.removeItem('userEmail');
+
+  // Redirect หน้าหลังจากล็อกเอาท์ (ตัวอย่างเปลี่ยนไปหน้าล็อกอิน)
+  window.location.href = '/'; 
+}
+
+
+
+// function toggleDropdown() {
+//   var dropdownContent = document.getElementById("neprompt-content");
+//   dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
+// }
+
+// function updateResult() {
+//   var checkboxes = document.querySelectorAll('#neprompt-content input[type="checkbox"]:checked');
+//   var resultInput = document.getElementById("result");
+//   var selectedItems = Array.from(checkboxes).map(checkbox => checkbox.value).join(', ');
+//   resultInput.value = selectedItems;
+// }
+
+// document.addEventListener('click', function(event) {
+//   var dropdownBtn = document.getElementById('neprompt-btn');
+//   var dropdownContent = document.getElementById('neprompt-content');
+//   var resultInput = document.getElementById('result');
+
+//   if (!dropdownBtn.contains(event.target) && !dropdownContent.contains(event.target) && event.target !== resultInput) {
+//     dropdownContent.style.display = 'none';
+//   }
+// });
+
+// document.querySelectorAll('#neprompt-content input[type="checkbox"]').forEach(function(checkbox) {
+//   checkbox.addEventListener('change', updateResult);
+// });

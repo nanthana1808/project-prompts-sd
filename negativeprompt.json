@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    /* body {
+    body {
       font-family: Arial, sans-serif;
       background-color: #f4f4f4;
       display: flex;
@@ -12,40 +12,31 @@
       justify-content: center;
       height: 100vh;
       margin: 0;
-    } */
-
-    .neprompt-dropdown {
-      display: inline-block;
-      margin-left: 300px;
-      margin-top: 20px;
-      position: relative; 
     }
 
-    .neprompt-btn {
-      background-color: #2d28a6;
+    .dropdown {
+      position: relative;
+      display: inline-block;
+      margin-right: 20px;
+    }
+
+    .dropdown-btn {
+      background-color: #3498db;
       color: #fff;
       padding: 10px;
       border: none;
       cursor: pointer;
-      width: 400px;
-      height: 50px;
-      font-size: 20px;
     }
 
-    .neprompt-content {
+    .dropdown-content {
       display: none;
-      position: absolute; /* Change position to absolute */
-      top: 100%;
-      width: 400px;
-      left: 0;
+      position: absolute;
       background-color: #fff;
-      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
       padding: 12px;
       z-index: 1;
       border-radius: 4px;
       border: 1px solid #ccc;
-      overflow-y: auto; /* Add overflow-y property for scrolling */
-      max-height: 150px; /* Set a max height for scroll */
     }
 
     .checkbox-label {
@@ -58,20 +49,19 @@
     }
 
     #result {
+      margin-top: 20px;
       padding: 10px;
       border: 1px solid #3498db;
       border-radius: 4px;
-      width: 620px;
-      height: 100px;
-      margin-top: 0;
+      width: 200px;
     }
   </style>
 </head>
 <body>
 
-<div class="neprompt-dropdown">
-  <button onclick="toggleDropdown()" class="neprompt-btn" id="neprompt-btn">Select Items</button>
-  <div id="neprompt-content" class="neprompt-content">
+<div class="dropdown">
+  <button onclick="toggleDropdown()" class="dropdown-btn" id="dropdown-btn">Select Items</button>
+  <div id="dropdown-content" class="dropdown-content">
     <label class="checkbox-label">
       <input type="checkbox" value="Item 1"> Item 1
     </label>
@@ -89,20 +79,20 @@
 
 <script>
   function toggleDropdown() {
-    var dropdownContent = document.getElementById("neprompt-content");
+    var dropdownContent = document.getElementById("dropdown-content");
     dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
   }
 
   function updateResult() {
-    var checkboxes = document.querySelectorAll('#neprompt-content input[type="checkbox"]:checked');
+    var checkboxes = document.querySelectorAll('#dropdown-content input[type="checkbox"]:checked');
     var resultInput = document.getElementById("result");
     var selectedItems = Array.from(checkboxes).map(checkbox => checkbox.value).join(', ');
     resultInput.value = selectedItems;
   }
 
   document.addEventListener('click', function(event) {
-    var dropdownBtn = document.getElementById('neprompt-btn');
-    var dropdownContent = document.getElementById('neprompt-content');
+    var dropdownBtn = document.getElementById('dropdown-btn');
+    var dropdownContent = document.getElementById('dropdown-content');
     var resultInput = document.getElementById('result');
 
     if (!dropdownBtn.contains(event.target) && !dropdownContent.contains(event.target) && event.target !== resultInput) {
@@ -110,10 +100,9 @@
     }
   });
 
-  document.querySelectorAll('#neprompt-content input[type="checkbox"]').forEach(function(checkbox) {
+  document.querySelectorAll('#dropdown-content input[type="checkbox"]').forEach(function(checkbox) {
     checkbox.addEventListener('change', updateResult);
   });
-
 </script>
 
 </body>

@@ -18,14 +18,14 @@
         <div class="logo"><a href="#"><img src="/static/img/logo.png" alt=""></a></div>
     
         <ul class="menu">
-          <li><a href="/" id="home">HOME</a></li>
+          <!-- <li><a href="/" id="home">HOME</a></li> -->
           <li><a href="/ABOUT" id="about">ABOUT</a></li>
-          <li><a href="#Contact" id="contact">CONTACT</a></li>
           <li><a id="userEmail"></a></li>
+          <li><a href="/" id="logout" onclick="logout()">Logout</a></li>
         </ul>
     </nav>
 
-    
+
     <div id="loading-popup" class="loading-popup">
       <div class="loading-spinner"></div>
       <p>กำลังรันโมเดล...</p>
@@ -58,21 +58,71 @@
           <label for="english-prompt">English Prompt</label>
           <textarea id="english-prompt" name="english-prompt" rows="5" cols="33" placeholder=""></textarea>
         </div>
-        
-
-        </div>
-      
-        <div class="text-area-container">
-          <div class="text-area-neprompt">
-            <label for="in-neprompt">NegativePrompt</label>
-            <textarea id="in-neprompt" name="in-neprompt" rows="5" cols="33" placeholder=" Enter your negative prompt..."></textarea>
-          </div>
-          <div class="text-area-neprompt">
-            <label for="out-neprompt">NegativePrompt</label>
-            <textarea id="out-neprompt" name="out-neprompt" rows="5" cols="33" placeholder=""></textarea>
-          </div>
         </div>
     </div>
+
+    <div class="neprompt-dropdrown">
+      <div class="box-neprompt">
+        <button onclick="toggleDropdown()" class="neprompt-btn" id="neprompt-btn">Nagative Prompt &#9660;</button>
+        <div id="neprompt-content" class="neprompt-content">
+          <label class="checkbox-label">
+            <input type="checkbox" value="bad anatomy"> ร่างกายไม่สมบูรณ์
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" value="bad hands"> มือไม่สมบูรณ์
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" value="three hands"> มี 3 มือ
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" value="bad arms"> แขนไม่สมบูรณ์
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" value="missing arms"> แขนหาย
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" value="poorly drawn face"> วาดหน้าไม่ดี
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" value="cloned face"> โคลนหน้า
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" value="worst face"> ใบหน้าไม่สวย
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" value="missing fingers"> นิ้วหาย
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" value="ugly fingers"> นิ้วไม่สมบูรณ์
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" value="worst quality"> คุณภาพแย่
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" value="low quality"> คุณภาพต่ำ
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" value="low res"> ความละเอียดต่ำ
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" value="blurry"> เบลอ
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" value="duplicate"> ซ้ำกัน
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" value="sketch"> ภาพร่าง
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" value="horror"> สยองขวัญ
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" value="mutation"> กลายพันธุ์
+          </label>
+        </div>
+        <textarea type="text" id="out-neprompt"></textarea>
+      </div>
+    </div>        
 
     <div class="mixbox-container">
       <div class="box2-container">
@@ -165,6 +215,34 @@
     <a href="#"><i class="fa fa-linkedin"></i></a>
 </footer>
 
+<script>
+  function toggleDropdown() {
+    var dropdownContent = document.getElementById("neprompt-content");
+    dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
+  }
+
+  function updateResult() {
+    var checkboxes = document.querySelectorAll('#neprompt-content input[type="checkbox"]:checked');
+    var resultInput = document.getElementById("out-neprompt");
+    var selectedItems = Array.from(checkboxes).map(checkbox => checkbox.value).join(', ');
+    resultInput.value = selectedItems;
+  }
+
+  document.addEventListener('click', function(event) {
+    var dropdownBtn = document.getElementById('neprompt-btn');
+    var dropdownContent = document.getElementById('neprompt-content');
+    var resultInput = document.getElementById('out-neprompt');
+
+    if (!dropdownBtn.contains(event.target) && !dropdownContent.contains(event.target) && event.target !== resultInput) {
+      dropdownContent.style.display = 'none';
+    }
+  });
+
+  document.querySelectorAll('#neprompt-content input[type="checkbox"]').forEach(function(checkbox) {
+    checkbox.addEventListener('change', updateResult);
+  });
+
+</script>
 
   <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
   </body>

@@ -11,17 +11,14 @@
 }
 
 body {
-  background-color: #f3eeee; 
+  background-color: #050320; 
 }
 
-.dark-mode {
-  background-color: #141414;
-  color: white;
-}
+
 
 label {
   font-size: 20px;
-  color: #15151a;
+  color: #3976ee;
 }
 
 .banner {
@@ -187,6 +184,22 @@ nav .navbar .menu {
   height: auto; /* ให้รูปภาพปรับตามอัตราส่วน */
 }
 
+.menu li a#logout {
+  color: #f5ad05; /* สีข้อความ */
+  border-radius: 30px;
+  border: 2px solid #db9d02;
+  padding: 12px 20px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+
+.menu li a#logout:hover {
+  background-color: #ef9c01;
+  color: #000000; 
+}
+
+
 @media screen and (max-width: 768px) {
   nav .navbar {
     flex-direction: column;
@@ -209,11 +222,11 @@ nav .navbar .menu {
   flex-direction: column; 
   align-items: left;
   margin-top: 7%; 
-  margin-left: 14%;
+  margin-left: 300px;
 }
 
 .dropdown-container {
-  width: 1200px; 
+  width: 1400px; 
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -227,8 +240,8 @@ nav .navbar .menu {
 .dropdown-model select {
   padding: 10px;
   border-radius: 5px;
-  border: 2px solid #d57220;
-  box-shadow: 2px 2px 2px #d57220;
+  border: 2px solid #3976ee;
+  box-shadow: 2px 2px 2px #3976ee;
   line-height: 1.5;
   appearance: none;
   cursor: pointer;
@@ -257,14 +270,15 @@ nav .navbar .menu {
 }
 
 #generate-btn:hover {
-  background-color: #ff1111;
+  background-color: #fed90a;
+  color: #000000;
 }
 
 
-
 .box-container {
+  position: relative;
   margin-top: 0;
-  margin-left: 14%;
+  margin-left: 290px;
 }
 
 .text-area-container {
@@ -273,7 +287,7 @@ nav .navbar .menu {
   align-items: center; 
   margin-top: 20px; 
   margin-bottom: 5px;
-  width: 1200px;
+  width: 1400px;
   font-size: 18px;
 
 }
@@ -282,14 +296,9 @@ nav .navbar .menu {
   font-size: 22px;
   font-weight: lighter;
   padding: 10px;
-  border: 2px solid #d57220;
-  box-shadow: 2px 2px 2px #d57220;
-}
-
-.text-area-neprompt textarea {
-  height: 50px;
-  font-size: 22px;
-  padding: 10px;
+  border: 2px solid #3976ee;
+  box-shadow: 2px 2px 2px #3976ee;
+  font-weight: bold;
 }
 
 .text-area-prompt,
@@ -300,11 +309,6 @@ nav .navbar .menu {
   padding: 10px;
 }
 
-.text-area-neprompt textarea {
-  height: 70px;
-  font-size: 22px;
-  padding: 10px; 
-}
 
 
 .input-area {
@@ -315,14 +319,11 @@ nav .navbar .menu {
   width: 100%; /* ทำให้ textarea ขยายตาม input area */
 }
 
-.text-area-neprompt textarea {
-  height: 70px; /* ปรับความสูงตามที่ต้องการ */
-}
 
 
 .convert-btn {
   display: flex;
-  background-color: #4CAF50;
+  background-color: #5edd63;
   color: rgb(0, 0, 0);
   border: none;
   padding: 15px 15px;
@@ -330,13 +331,12 @@ nav .navbar .menu {
   cursor: pointer;
 }
 .convert-btn:hover {
-  background-color: #3f51ef;
+  background-color: #fed90a;
 }
 
 .box2-container {
+  position: relative;
   margin-top: 0;
-  margin-left: 15%;
-
 }
 
 .dropdown-method-container {
@@ -345,8 +345,8 @@ nav .navbar .menu {
   justify-content: space-between;
   align-items: left;
   margin-top: 20px;
-  width: 550px;
-  margin-bottom: 2%;
+  width: 600px;
+  margin-bottom: 10%;
 }
 
 .dropdown-method-container label {
@@ -357,9 +357,9 @@ nav .navbar .menu {
   font-size: 16px;
   padding: 10px;
   border-radius: 5px;
-  border: 2px solid #d57220;
-  box-shadow: 1px 1px 1px #d57220;
-  width: 400px;
+  border: 2px solid #3976ee;
+  box-shadow: 2px 2px 2px #3976ee;
+  width: 600px;
   max-width: 100%;
   line-height: 1.5;
   appearance: none;
@@ -374,6 +374,7 @@ nav .navbar .menu {
   justify-content: flex-start; /* ปรับให้ Slider มีการจัดวางจากด้านซ้ายไปขวา */
   align-items: left;
   margin-top: 20px;
+  margin-bottom: 10%;
 }
 
 .slider-group {
@@ -405,6 +406,7 @@ nav .navbar .menu {
   display: flex;
   align-items: left;
   margin-top: 20px;
+  margin-bottom: 10%;
 }
 
 .size-group {
@@ -412,7 +414,7 @@ nav .navbar .menu {
   justify-content: space-between;
   align-items: center;
   margin-right: 20px;
-  width: 320px;
+  width: 450px;
 }
 
 .size-group label {
@@ -424,13 +426,13 @@ nav .navbar .menu {
 .size-group select {
   padding: 10px;
   border-radius: 5px;
-  border: 2px solid #d57220;
-  box-shadow: 1px 1px 1px #d57220;
+  border: 2px solid #3976ee;
+  box-shadow: 2px 2px 2px #3976ee;
   line-height: 1.5;
   appearance: none;
   cursor: pointer;
   background-color: #fff;
-  width: 70px; /* Adjust the width according to your design */
+  width: 100px; /* Adjust the width according to your design */
   font-size: 16px;
 }
 
@@ -449,8 +451,8 @@ nav .navbar .menu {
 .seed-container input {
   padding: 10px;
   border-radius: 5px;
-  border: 2px solid #d57220;
-  box-shadow: 1px 1px 1px #d57220;
+  border: 2px solid #3976ee;
+  box-shadow: 2px 2px 2px #3976ee;
   width: 400px;
   max-width: 100%;
   appearance: none;
@@ -458,9 +460,9 @@ nav .navbar .menu {
 }
 
 .box3-container {
-  margin-left: 8%;
-  position: relative; 
-  margin-top: 20px;
+  position: relative;
+  margin-left: 10%;
+  margin-top: 40px;
 }
 
 .image-container {
@@ -507,11 +509,12 @@ nav .navbar .menu {
 
 .mixbox-container {
   display: flex;
+  position: relative;
   justify-content: space-between;
-  align-items: flex-start; /* Adjust alignment according to your design */
-  margin-top: 20px;
+  align-items: flex-start;
+  margin-top: 50px;
   width: 1400px;
-  margin-left: 5%;
+  margin-left: 300px;
 }
 
 .mySlides {
@@ -698,4 +701,61 @@ nav .navbar .menu {
   100% { transform: rotate(360deg); }
 }
 
+.neprompt-dropdrown {
+  margin-top: 20px;
+}
 
+.box-neprompt {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 300px; 
+}
+
+.neprompt-btn {
+  background-color: #020113;
+  color: #3976ee;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  width: 200px;
+  height: 100px;
+  font-size: 18px;
+}
+
+.neprompt-content {
+  display: none;
+  position: relative;
+  top: 100%;
+  width: 400px;
+  left: 0;
+  background-color: #dfdfdf;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px;
+  z-index: 1;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  overflow-y: auto;
+  max-height: 150px;
+}
+
+.checkbox-label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.checkbox-label input {
+  margin-right: 8px;
+}
+
+#out-neprompt {
+  padding: 10px;
+  border: 1px solid #3498db;
+  border-radius: 4px;
+  width: 400px;
+  height: 100px;
+  margin-top: 0;
+  font-size: 16px;
+  box-shadow: 2px 2px 2px #3976ee;
+}

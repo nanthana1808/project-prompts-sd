@@ -43,11 +43,8 @@ function updateUserProfile(user) {
     const userName = user.displyName
     // const userEmail = user ? user.email : "Guest";
     const userEmail = user.email;
-    const updateUserProfile = user.photoURL;
 
     document.getElementById("userName").textContent = userName
-    document.getElementById("userEmail").textContent = userEmail;
-    document.getElementById("userProfilePicture").src = userProfilePicture;
 }
 
 
