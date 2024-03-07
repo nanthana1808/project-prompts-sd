@@ -45,23 +45,9 @@ function convertPrompt() {
     });
 }
 
-// var myIndex = 0;
-// carousel();
 
-// function carousel() {
-//   var i;
-//   var x = document.getElementsByClassName("mySlides");
-//   for (i = 0; i < x.length; i++) {
-//     x[i].style.display = "none";
-//   }
-//   myIndex++;
-//   if (myIndex > x.length) {
-//     myIndex = 1;
-//   }
-//   x[myIndex - 1].style.display = "block";
-//   setTimeout(carousel, 3000);
-// }
 
+// function call api from stable diffusion //
 async function callTxt2ImgAPI() {
   // แสดง popup ก่อนทำการเรียก API
   document.getElementById('loading-popup').style.display = 'block';
@@ -125,7 +111,7 @@ async function callTxt2ImgAPI() {
 }
 
 
-
+//functioon download img//
 function downloadImage() {
   const resultImage = document.getElementById('result-image');
   const link = document.createElement('a');
@@ -136,3 +122,36 @@ function downloadImage() {
   document.body.removeChild(link);
 }
 
+
+//function Logout//
+function toggleDropdown() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+function logout() {
+  // ทำการลบข้อมูลผู้ใช้ที่เก็บไว้ใน localStorage
+  localStorage.removeItem("user");
+
+  // ทำการ sign out จากระบบ Firebase
+  auth.signOut().then(() => {
+    console.log("User signed out successfully");
+
+    // ทำการ redirect หน้าเว็บไปที่หน้าล็อกอิน 
+    window.location.replace("/");
+  }).catch((error) => {
+    console.error("Error during sign out:", error);
+  });
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function (event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    for (var i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}

@@ -35,3 +35,4 @@ document.addEventListener("DOMContentLoaded", function () {
     updateUserProfile(auth.currentUser);
 });
 
+

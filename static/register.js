@@ -50,3 +50,5 @@ function updateUserProfile(user) {
     document.getElementById("userProfilePicture").src = userProfilePicture;
 }
 
+
+
