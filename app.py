@@ -14,21 +14,19 @@ def handle_txt2img():
         response = app.make_default_options_response()
         response.headers['Access-Control-Allow-Headers'] = 'Content-Type'
         response.headers['Access-Control-Allow-Methods'] = 'POST'
-        response.headers['Access-Control-Allow-Origin'] = '*'  # Set the allowed origin
+        response.headers['Access-Control-Allow-Origin'] = '*' 
         return response
     elif request.method == 'POST':
-        # Your existing POST request handling logic goes here
         try:
-            # Your existing POST request handling logic goes here
-            # ...
 
-            # Explicitly set the Access-Control-Allow-Origin header
             response = jsonify({"key": "value"})
             response.headers['Access-Control-Allow-Origin'] = '*'
             return response
         except Exception as e:
             return jsonify({"error": str(e)}), 500
         
+
+
 
 # อ่านข้อมูลจากไฟล์ JSON ทุกครั้งที่มีการเรียกใช้ฟังก์ชัน translate_prompt
 def load_data():
@@ -47,15 +45,15 @@ def home():
 def about():
     return render_template('about.html')
 
-@app.route('/SIMPLE')
-def simple():
-    return render_template('simple.html')
+
 
 
 # แปลง prompt จากภาษาไทยเป็นภาษาอังกฤษ
 def translate(thai_prompt, data):
     translated_words = [data.get(word.strip(), word.strip()) for word in thai_prompt.split(',')]
     return ', '.join(translated_words)
+
+
 
 # ในฟังก์ชัน translate_prompt เรียกใช้ฟังก์ชัน translate
 @app.route('/translate_prompt', methods=['POST'])

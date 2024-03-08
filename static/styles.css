@@ -180,12 +180,12 @@ nav .navbar .menu {
   color: #d62424;
 }
 .logo img {
-  width: 40%; /* ปรับขนาดของรูปภาพตามที่คุณต้องการ */
-  height: auto; /* ให้รูปภาพปรับตามอัตราส่วน */
+  width: 40%; 
+  height: auto; 
 }
 
 .menu li a#logout {
-  color: #f5ad05; /* สีข้อความ */
+  color: #f5ad05; 
   border-radius: 30px;
   border: 2px solid #db9d02;
   padding: 12px 20px;
@@ -310,11 +310,11 @@ nav .navbar .menu {
 
 
 .input-area {
-  width: 40%; /* ปรับความกว้างของ input area */
+  width: 40%; 
 }
 
 .text-area-container textarea {
-  width: 100%; /* ทำให้ textarea ขยายตาม input area */
+  width: 100%; 
 }
 
 
@@ -369,7 +369,7 @@ nav .navbar .menu {
 /* Slider Styles */
 .slider-container {
   display: flex;
-  justify-content: flex-start; /* ปรับให้ Slider มีการจัดวางจากด้านซ้ายไปขวา */
+  justify-content: flex-start; 
   align-items: left;
   margin-top: 20px;
   margin-bottom: 10%;
@@ -377,11 +377,11 @@ nav .navbar .menu {
 
 .slider-group {
   text-align: center;
-  margin-right: 20px; /* ปรับระยะห่างระหว่าง Slider ให้มากขึ้น */
+  margin-right: 20px; 
 }
 
 .slider {
-  width: 200px; /* ปรับความกว้างของ Slider เหลือน้อยลง */
+  width: 200px; 
 }
 
 .slider-value {
@@ -392,7 +392,7 @@ nav .navbar .menu {
   font-size: 16px;
 }
 
-/* Move Labels to the Top */
+
 .slider-group label {
   display: block;
   text-align: left;
@@ -418,7 +418,7 @@ nav .navbar .menu {
 .size-group label {
   display: block;
   text-align: left;
-  margin-right: 10px; /* Add margin for better separation */
+  margin-right: 10px; 
 }
 
 .size-group select {
@@ -430,7 +430,7 @@ nav .navbar .menu {
   appearance: none;
   cursor: pointer;
   background-color: #fff;
-  width: 100px; /* Adjust the width according to your design */
+  width: 100px; 
   font-size: 16px;
 }
 
@@ -566,7 +566,7 @@ nav .navbar .menu {
   background: url('/static/img/bg-login.png') center/cover fixed;
   filter: blur(10px);
   -webkit-filter: blur(10px);
-  z-index: -1; /* Place it behind other content */
+  z-index: -1; 
 }
 
 .login-container {
