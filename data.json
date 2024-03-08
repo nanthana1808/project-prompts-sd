@@ -45,6 +45,7 @@
     "ตา almond": "almond eyes",
     "ตากลม": "round eyes",
     "ตากลมโต": "round eyes",
+    "ตาโต": "round eyes",
     "ตาชั้นเดียว": "monolid eyes",
     "ตาตก": "downturned eyes",
     "หางตาชี้": "upturned eyes",
@@ -128,8 +129,14 @@
     "ผมบลอนด์": "blonde hair",
     "ผมสีเทา": "silver hair",
     "ผมสีฟ้า": "blue hair",
+    "ผมสีชมพู": "pink hair",
+    "ผมสีเหลือง": "yellow hair",
     "ผมสีแดง": "red hair",
     "ผมสีเขียว": "green hair",
     "ผมสีม่วง": "purple hair",
-    "ผมหลากสี": "multicolored hair"
+    "ผมหลากสี": "multicolored hair",
+    "ปากสีดำ": "black lips",
+    "ปากสีน้ำตาล": "brown lips",
+    "ปากสีแดง": "red lips",
+    "ปากสีชมพู": "pink lips"
 }
