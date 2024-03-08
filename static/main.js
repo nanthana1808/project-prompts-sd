@@ -122,28 +122,15 @@ function logout() {
 
 
 
-// function toggleDropdown() {
-//   var dropdownContent = document.getElementById("neprompt-content");
-//   dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
-// }
+function showInfo(infoId) {
+  var infoPopup = document.getElementById(infoId);
 
-// function updateResult() {
-//   var checkboxes = document.querySelectorAll('#neprompt-content input[type="checkbox"]:checked');
-//   var resultInput = document.getElementById("result");
-//   var selectedItems = Array.from(checkboxes).map(checkbox => checkbox.value).join(', ');
-//   resultInput.value = selectedItems;
-// }
+  // Toggle the display of the information popup
+  infoPopup.style.display = infoPopup.style.display === "block" ? "none" : "block";
+}
 
-// document.addEventListener('click', function(event) {
-//   var dropdownBtn = document.getElementById('neprompt-btn');
-//   var dropdownContent = document.getElementById('neprompt-content');
-//   var resultInput = document.getElementById('result');
 
-//   if (!dropdownBtn.contains(event.target) && !dropdownContent.contains(event.target) && event.target !== resultInput) {
-//     dropdownContent.style.display = 'none';
-//   }
-// });
 
-// document.querySelectorAll('#neprompt-content input[type="checkbox"]').forEach(function(checkbox) {
-//   checkbox.addEventListener('change', updateResult);
-// });
+
+
+

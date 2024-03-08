@@ -39,13 +39,20 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-function updateUserProfile(user) {
-    const userName = user.displyName
-    // const userEmail = user ? user.email : "Guest";
-    const userEmail = user.email;
-
-    document.getElementById("userName").textContent = userName
-}
-
+function showInfo(infoId) {
+    var infoPopup = document.getElementById(infoId);
+    var questionIcon = document.getElementById('question-icon');
+  
+    // Get the position of the icon
+    var iconRect = questionIcon.getBoundingClientRect();
+    
+    // Set the position of the popup above the icon
+    infoPopup.style.left = iconRect.left + 'px';
+    infoPopup.style.top = (iconRect.top - infoPopup.offsetHeight) + 'px';
+  
+    // Toggle the display of the information popup
+    infoPopup.style.display = infoPopup.style.display === "block" ? "none" : "block";
+  }
+  
 
 

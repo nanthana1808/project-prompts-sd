@@ -119,15 +119,25 @@
           <label class="checkbox-label">
             <input type="checkbox" value="mutation"> กลายพันธุ์
           </label>
+          <label class="checkbox-label">
+            <input type="checkbox" value="nsfw"> ไม่ปลอดภัยสำหรับเปิดในที่ทำงาน
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" value="nude"> เปลือย
+          </label>
         </div>
         <textarea type="text" id="out-neprompt"></textarea>
       </div>
     </div>        
 
+    <div id="sampling-method-info" class="info-popup">
+      <p>เป็นชนิดของ algorithm ในการ sampling ภาพ</p>
+    </div>
+
     <div class="mixbox-container">
       <div class="box2-container">
         <div class="dropdown-method-container">
-          <label for="method-type">Sampling method</label>
+          <label for="method-type">Sampling method <i class="fa fa-question-circle" aria-hidden="true" onclick="showInfo('sampling-method-info')"> </i></label>
           <select id="method-type" name="method-type">
             <option value="DPM++2 Karras">DPM++2 Karras</option>
             <option value="DPM++SDE Karras">DPM++SDE Karras</option>
@@ -163,15 +173,23 @@
           </select>
         </div>
 
+        <div id="step-info" class="info-popup-step">
+          <p>ใช้ในการ de-noise ภาพ ถ้าเพิ่มค่านี้ให้เป็นตัวเลขสูงๆ ภาพจะมีรายละเอียดมากขึ้น (แนะนำ 20 -30) เพราะค่าเยอะจะใช้เวลาเจนภาพนาน</p>
+        </div>
+
+        <div id="scale-info" class="info-popup-scale">
+          <p>เป็นพารามิเตอร์สำหรับเอามาตั้งให้ภาพที่เราจะเจน มีความใกล้เคียงกับ prompt มากที่สุด (แนะนำค่าน้อย)</p>
+        </div>
+
         <div class="slider-container">
           <div class="slider-group">
-            <label for="step-slider">Step</label>
+            <label for="step-slider">Step <i class="fa fa-question-circle" aria-hidden="true" onclick="showInfo('step-info')"> </i></label>
             <input type="range" id="step-slider" min="1" max="150" value="150" class="slider">
             <input type="text" id="step-value" class="slider-value" value="150">
           </div>
 
           <div class="slider-group">
-            <label for="cfg-slider">CFG Scale</label>
+            <label for="cfg-slider">CFG Scale <i class="fa fa-question-circle" aria-hidden="true" onclick="showInfo('scale-info')"> </i> </label>
             <input type="range" id="cfg-slider" min="1" max="30" value="30" class="slider">
             <input type="text" id="cfg-value" class="slider-value" value="30">
           </div>
@@ -191,10 +209,14 @@
         </select>
         </div>
       </div>
+      
+      <div id="seed-info" class="info-popup-seed">
+        <p>เป็นตัวเลขในการกำหนดค่า random ของ noise ในการสร้างภาพ
+          <br>ถ้าต้องการให้ random seed ทุกครั้งที่สร้างภาพ ให้ใส่ค่า -1</p>
+      </div>
 
-          
       <div class="seed-container">
-        <label for="seed">Seed</label>
+        <label for="seed">Seed <i class="fa fa-question-circle" aria-hidden="true" onclick="showInfo('seed-info')"></i></label>
         <input type="text" id="seed" name="seed" placeholder="Enter seed...">
       </div>    
     </div>
