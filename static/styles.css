@@ -239,19 +239,12 @@ nav .navbar .menu {
 .dropdown-model select {
   padding: 10px;
   border-radius: 5px;
-  border: 2px solid #3976ee;
-  box-shadow: 2px 2px 2px #3976ee;
   line-height: 1.5;
   appearance: none;
   cursor: pointer;
   background-color: #fff;
   width: 30%; 
   font-size: 16px;
-}
-
-.dropdown-model select:hover,
-.dropdown-model select:focus {
-  color: #ef5421;
 }
 
 #generate-btn {
