@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>Home Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai+Looped:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <script src="{{ url_for('static', filename='update.js') }}" defer type="module"></script>
@@ -18,8 +19,6 @@
         <div class="logo"><a href="#"><img src="/static/img/logo.png" alt=""></a></div>
     
         <ul class="menu">
-          <!-- <li><a href="/" id="home">HOME</a></li> -->
-          <li><a href="/ABOUT" id="about">ABOUT</a></li>
           <li><a id="userEmail"></a></li>
           <li><a href="/" id="logout" onclick="logout()">Logout</a></li>
         </ul>
@@ -131,7 +130,7 @@
     </div>        
 
     <div id="sampling-method-info" class="info-popup">
-      <p>เป็นชนิดของ algorithm ในการ sampling ภาพ</p>
+      <p>เป็นชนิดของ algorithm ในการ sampling ภาพ (แนะนำ Euler, DDIM, DPM++)</p>
     </div>
 
     <div class="mixbox-container">
