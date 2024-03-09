@@ -37,13 +37,13 @@ def load_data():
 def index():
     return render_template('index.html')
 
-@app.route('/HOME')
+@app.route('/DESIGN')
 def home():
-    return render_template('home.html')
+    return render_template('design.html')
 
-@app.route('/ABOUT')
+@app.route('/LOGIN')
 def about():
-    return render_template('about.html')
+    return render_template('login.html')
 
 
 

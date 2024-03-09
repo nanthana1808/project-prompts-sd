@@ -115,7 +115,7 @@ function logout() {
   localStorage.removeItem('userEmail');
 
   // Redirect หน้าหลังจากล็อกเอาท์ (ตัวอย่างเปลี่ยนไปหน้าล็อกอิน)
-  window.location.href = '/'; 
+  window.location.href = '/LOGIN'; 
 }
 
 

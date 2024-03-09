@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 const user = result.user;
                 console.log(user);
                 localStorage.setItem("user", JSON.stringify(user))
-                window.location.replace("/HOME");
+                window.location.replace("/DESIGN");
             })
             .catch((error) => {
                 console.error('Error during Google login:', error);
