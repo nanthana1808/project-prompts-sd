@@ -130,38 +130,6 @@ function logout() {
   window.location.href = '/DESIGN'; 
 }
 
-// Add the following function to your existing JavaScript
-function openFullScreen() {
-  console.log('Open Full Screen clicked');
-  var fullScreenView = document.createElement('div');
-  fullScreenView.classList.add('full-screen-view');
-
-  var fullScreenImage = document.createElement('img');
-  fullScreenImage.classList.add('full-screen-image');
-  fullScreenImage.src = document.getElementById('result-image').src;
-
-  var closeButton = document.createElement('span');
-  closeButton.innerHTML = '&times;';
-  closeButton.classList.add('close-button');
-  closeButton.onclick = closeFullScreen;
-
-  fullScreenView.appendChild(fullScreenImage);
-  fullScreenView.appendChild(closeButton);
-
-  document.body.appendChild(fullScreenView);
-}
-
-function closeFullScreen() {
-  var fullScreenView = document.querySelector('.full-screen-view');
-  if (fullScreenView) {
-    fullScreenView.remove();
-  }
-}
-
-// Modify your existing API response code to add the click event
-const resultImage = document.getElementById("result-image");
-resultImage.addEventListener('click', openFullScreen);
-
 
 function showInfo(infoId) {
   var infoPopup = document.getElementById(infoId);
@@ -171,7 +139,63 @@ function showInfo(infoId) {
 }
 
 
+function openFullScreen() {
+  console.log('Open Full Screen clicked');
+  var fullScreenView = document.createElement('div');
+  fullScreenView.classList.add('full-screen-view');
+
+  var fullScreenImage = document.createElement('img');
+  fullScreenImage.classList.add('full-screen-image');
+  fullScreenImage.src = document.getElementById('result-image').src;
+  
+  // Enable zooming for the full-screen image
+  fullScreenImage.style.cursor = 'zoom-out';
+  fullScreenImage.style.maxWidth = '100%';
+  fullScreenImage.style.maxHeight = '100%';
+  fullScreenImage.style.position = 'absolute';
+  fullScreenImage.style.top = '50%';
+  fullScreenImage.style.left = '50%';
+  fullScreenImage.style.transform = 'translate(-50%, -50%)';
+  
+  // Close button for the full-screen view
+  var closeButton = document.createElement('span');
+  closeButton.innerHTML = '&times;';
+  closeButton.classList.add('close-button');
+  closeButton.style.position = 'absolute';
+  closeButton.style.top = '15px';
+  closeButton.style.right = '35px';
+  closeButton.onclick = closeFullScreen;
+
+  fullScreenView.appendChild(fullScreenImage);
+  fullScreenView.appendChild(closeButton);
+
+  document.body.appendChild(fullScreenView);
+
+  // Add event listener for zooming
+  fullScreenImage.addEventListener('click', function () {
+    if (fullScreenImage.style.cursor === 'zoom-in') {
+      fullScreenImage.style.cursor = 'zoom-out';
+    } else {
+      fullScreenImage.style.cursor = 'zoom-in';
+    }
+  });
+}
 
 
+// Add this function to your existing JavaScript
+function closeFullScreen() {
+  var fullScreenView = document.querySelector('.full-screen-view');
+  if (fullScreenView) {
+    document.body.removeChild(fullScreenView);
+  }
+}
 
 
+document.addEventListener('DOMContentLoaded', function () {
+  // Existing code...
+
+  // Add this line to attach the click event for fullscreen
+  document.getElementById('result-image').addEventListener('click', openFullScreen);
+
+  // Existing code...
+});
