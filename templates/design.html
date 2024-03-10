@@ -102,13 +102,25 @@
             <input type="checkbox" value="low res"> ความละเอียดต่ำ
           </label>
           <label class="checkbox-label">
+            <input type="checkbox" value="watermark"> ลายน้ำ
+          </label>
+          <label class="checkbox-label">
             <input type="checkbox" value="blurry"> เบลอ
           </label>
           <label class="checkbox-label">
             <input type="checkbox" value="duplicate"> ซ้ำกัน
           </label>
           <label class="checkbox-label">
+            <input type="checkbox" value="error"> ผิดพลาด
+          </label>
+          <label class="checkbox-label">
             <input type="checkbox" value="sketch"> ภาพร่าง
+          </label> 
+          <label class="checkbox-label">
+            <input type="checkbox" value="black&white"> ขาวดำ
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" value="illustration"> ภาพประกอบ
           </label>
           <label class="checkbox-label">
             <input type="checkbox" value="horror"> สยองขวัญ
@@ -121,6 +133,24 @@
           </label>
           <label class="checkbox-label">
             <input type="checkbox" value="nude"> เปลือย
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" value="mix color"> ผสมสี
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" value="anime"> อนิเมะ
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" value="unreal"> ไม่สมจริง
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" value="logo"> โลโก้
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" value="username"> ชื่อ
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" value="signature"> ลายเซ็นต์
           </label>
         </div>
         <textarea type="text" id="out-neprompt"></textarea>
@@ -198,7 +228,7 @@
 
       <div class="seed-container">
         <label for="seed">Seed <i class="fa fa-question-circle" aria-hidden="true" onclick="showInfo('seed-info')"></i></label>
-        <input type="text" id="seed" name="seed" placeholder="Enter seed...">
+        <input type="number" id="seed" name="seed" placeholder="Enter seed..." min="-1" step="1">
       </div>    
     </div>
 

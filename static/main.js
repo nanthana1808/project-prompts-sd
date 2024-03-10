@@ -45,8 +45,6 @@ function convertPrompt() {
     });
 }
 
-
-
 // function call api from stable diffusion //
 async function callTxt2ImgAPI() {
   // แสดง popup ก่อนทำการเรียก API
@@ -92,7 +90,10 @@ async function callTxt2ImgAPI() {
 
     console.log('API Response:', result);
     var dataurl = "data:image/png;base64," + result.images[0]
-    document.getElementById("result-image").src = dataurl
+    document.getElementById("result-image").src = dataurl;
+
+    // Enable the Download button
+    document.getElementById('download-btn').removeAttribute('disabled');
 
     if (result && typeof result === 'object' && 'key' in result) {
       const keyValue = result.key;
@@ -108,6 +109,17 @@ async function callTxt2ImgAPI() {
   }
 }
 
+// Add this function to your existing JavaScript
+function downloadImage() {
+  var resultImage = document.getElementById('result-image');
+  var downloadLink = document.createElement('a');
+  downloadLink.href = resultImage.src;
+  downloadLink.download = 'generated_image.png';
+  document.body.appendChild(downloadLink);
+  downloadLink.click();
+  document.body.removeChild(downloadLink);
+}
+
 
 function logout() {
 
@@ -115,9 +127,40 @@ function logout() {
   localStorage.removeItem('userEmail');
 
   // Redirect หน้าหลังจากล็อกเอาท์ (ตัวอย่างเปลี่ยนไปหน้าล็อกอิน)
-  window.location.href = '/LOGIN'; 
+  window.location.href = '/DESIGN'; 
 }
 
+// Add the following function to your existing JavaScript
+function openFullScreen() {
+  console.log('Open Full Screen clicked');
+  var fullScreenView = document.createElement('div');
+  fullScreenView.classList.add('full-screen-view');
+
+  var fullScreenImage = document.createElement('img');
+  fullScreenImage.classList.add('full-screen-image');
+  fullScreenImage.src = document.getElementById('result-image').src;
+
+  var closeButton = document.createElement('span');
+  closeButton.innerHTML = '&times;';
+  closeButton.classList.add('close-button');
+  closeButton.onclick = closeFullScreen;
+
+  fullScreenView.appendChild(fullScreenImage);
+  fullScreenView.appendChild(closeButton);
+
+  document.body.appendChild(fullScreenView);
+}
+
+function closeFullScreen() {
+  var fullScreenView = document.querySelector('.full-screen-view');
+  if (fullScreenView) {
+    fullScreenView.remove();
+  }
+}
+
+// Modify your existing API response code to add the click event
+const resultImage = document.getElementById("result-image");
+resultImage.addEventListener('click', openFullScreen);
 
 
 function showInfo(infoId) {
