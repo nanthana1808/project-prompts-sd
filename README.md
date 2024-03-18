@@ -32,6 +32,25 @@ You can utilize the API to generate images by providing the following parameters
     seed: seed,
   };
 ```
+```python
+@app.route('/sdapi/v1/txt2img', methods=['OPTIONS', 'POST'])
+def handle_txt2img():
+    if request.method == 'OPTIONS':
+        response = app.make_default_options_response()
+        response.headers['Access-Control-Allow-Headers'] = 'Content-Type'
+        response.headers['Access-Control-Allow-Methods'] = 'POST'
+        response.headers['Access-Control-Allow-Origin'] = '*' 
+        return response
+    elif request.method == 'POST':
+        try:
+
+            response = jsonify({"key": "value"})
+            response.headers['Access-Control-Allow-Origin'] = '*'
+            return response
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+```
+
 **Format Image**
 
 After generating images using the Stable Diffusion Models API, The number of images depends on what you specified for a batch size. The images are in base64 format, and therefore need to be decoded and saved to the file system as normal images:
