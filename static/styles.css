@@ -717,11 +717,12 @@ nav .navbar .menu {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-left: 300px; 
+  margin-left: 300px;
+  gap: 20px 
 }
 
 .neprompt-btn {
-  background-color: #0a073e;
+  background-color: #1e198a; 
   color: #3976ee;
   padding: 10px;
   border: none;
