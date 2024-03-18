@@ -20,14 +20,27 @@ To use the API provided by Stable Diffusion Models, you can refer to the documen
 You can utilize the API to generate images by providing the following parameters
 
 **Example**
-```json
-{
-  "prompt": "Sunset in the mountains, lake in front",
-  "negative_prompt": "clouds, people",
-  "sampler_name": "Euler",
-  "steps": 20,
-  "cfg_scale": 7,
-  "height": 512,
-  "width": 512,
-  "seed": -1
-}
+```javascript
+   const requestData = {
+    prompt: prompt,
+    negative_prompt: negativePrompt,
+    sampler_name: samplerName,
+    steps: steps,
+    cfg_scale: cfgScale,
+    height: height,
+    width: width,
+    seed: seed,
+  };
+```
+**Format Image**
+
+After generating images using the Stable Diffusion Models API, you need to decode and save them as normal images. Follow these steps:
+
+```javascript
+// Example code to decode and save images
+// Make sure to replace 'result' with the variable containing your API response
+// Ensure 'fs' module is imported and available in your environment
+result.images.forEach((img, i) => {
+  const buf = Buffer.from(img, 'base64');
+  fs.writeFileSync(`image-${i}.png`, buf);
+});
