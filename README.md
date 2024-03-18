@@ -34,7 +34,7 @@ You can utilize the API to generate images by providing the following parameters
 ```
 **Format Image**
 
-After generating images using the Stable Diffusion Models API, you need to decode and save them as normal images. Follow these steps:
+After generating images using the Stable Diffusion Models API, The number of images depends on what you specified for a batch size. The images are in base64 format, and therefore need to be decoded and saved to the file system as normal images:
 
 ```javascript
 // Example code to decode and save images
