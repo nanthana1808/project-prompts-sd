@@ -1,18 +1,25 @@
+
+
+
 document.addEventListener('DOMContentLoaded', function () {
+  // รับ value ของสไลด์เดอร์
   const stepSlider = document.getElementById("step-slider");
   const stepValue = document.getElementById("step-value");
   const cfgSlider = document.getElementById("cfg-slider");
   const cfgValue = document.getElementById("cfg-value");
 
+  // เพิ่มอีเวนต์การเปลี่ยนค่าสำหรับสไลด์เดอร์
   stepSlider.addEventListener("input", updateSliderValue.bind(null, stepSlider, stepValue));
   cfgSlider.addEventListener("input", updateSliderValue.bind(null, cfgSlider, cfgValue));
   stepValue.addEventListener("input", updateTextBoxValue.bind(null, stepSlider, stepValue));
   cfgValue.addEventListener("input", updateTextBoxValue.bind(null, cfgSlider, cfgValue));
 
+  // ฟังก์ชันสำหรับอัปเดตค่าสไลด์เดอร์
   function updateSliderValue(slider, valueBox) {
     valueBox.value = slider.value;
   }
 
+  // ฟังก์ชันสำหรับอัปเดตค่าของกล่องข้อความ
   function updateTextBoxValue(slider, valueBox) {
     let newValue = parseFloat(valueBox.value);
 
@@ -26,9 +33,11 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
+// ฟังก์ชันสำหรับแปลงข้อความ
 function convertPrompt() {
   const thaiPrompt = document.getElementById("thai-prompt").value;
 
+  // ส่งคำขอไปยังเซิร์ฟเวอร์เพื่อแปลงข้อความ
   fetch('/translate_prompt', {
     method: 'POST',
     headers: {
@@ -45,14 +54,14 @@ function convertPrompt() {
     });
 }
 
-// function call api from stable diffusion //
+// ฟังก์ชันสำหรับเรียกใช้งาน API
 async function callTxt2ImgAPI() {
   // แสดง popup ก่อนทำการเรียก API
   document.getElementById('loading-popup').style.display = 'block';
 
   const apiUrl = 'http://localhost:7860/sdapi/v1/txt2img';
 
-  // Get values from HTML elements
+  // ค่าจากหน้า HTML
   const prompt = document.getElementById('english-prompt').value;
   const negativePrompt = document.getElementById('neprompt-content').value;
   const samplerName = document.getElementById('method-type').value;
@@ -92,7 +101,7 @@ async function callTxt2ImgAPI() {
     var dataurl = "data:image/png;base64," + result.images[0]
     document.getElementById("result-image").src = dataurl;
 
-    // Enable the Download button
+    // ปุ่มดาวน์โหลด
     document.getElementById('download-btn').removeAttribute('disabled');
 
     if (result && typeof result === 'object' && 'key' in result) {
@@ -109,7 +118,7 @@ async function callTxt2ImgAPI() {
   }
 }
 
-// Add this function to your existing JavaScript
+// ฟังก์ชันสำหรับดาวน์โหลดภาพ
 function downloadImage() {
   var resultImage = document.getElementById('result-image');
   var downloadLink = document.createElement('a');
@@ -120,25 +129,24 @@ function downloadImage() {
   document.body.removeChild(downloadLink);
 }
 
-
+// ฟังก์ชันสำหรับล็อกเอาท์
 function logout() {
-
-  // ลบ localStorage ที่เก็บข้อมูลผู้ใช้หลังจากล็อกเอาท์
+  // ลบข้อมูลผู้ใช้จาก localStorage
   localStorage.removeItem('userEmail');
 
-  // Redirect หน้าหลังจากล็อกเอาท์ (ตัวอย่างเปลี่ยนไปหน้าล็อกอิน)
+  // Redirect หน้าหลังจากล็อกเอาท์ 
   window.location.href = '/DESIGN'; 
 }
 
-
+// ฟังก์ชันสำหรับแสดงข้อมูล
 function showInfo(infoId) {
   var infoPopup = document.getElementById(infoId);
 
-  // Toggle the display of the information popup
+  // แสดง popup ข้อมูล
   infoPopup.style.display = infoPopup.style.display === "block" ? "none" : "block";
 }
 
-
+// ฟังก์ชันสำหรับเปิดดูภาพเต็มหน้าจอ
 function openFullScreen() {
   console.log('Open Full Screen clicked');
   var fullScreenView = document.createElement('div');
@@ -148,7 +156,7 @@ function openFullScreen() {
   fullScreenImage.classList.add('full-screen-image');
   fullScreenImage.src = document.getElementById('result-image').src;
   
-  // Enable zooming for the full-screen image
+  // ฟังก์ชันซูมภาพเต็มหน้าจอ
   fullScreenImage.style.cursor = 'zoom-out';
   fullScreenImage.style.maxWidth = '100%';
   fullScreenImage.style.maxHeight = '100%';
@@ -157,7 +165,7 @@ function openFullScreen() {
   fullScreenImage.style.left = '50%';
   fullScreenImage.style.transform = 'translate(-50%, -50%)';
   
-  // Close button for the full-screen view
+  // ปุ่มปิดหน้าจอ
   var closeButton = document.createElement('span');
   closeButton.innerHTML = '&times;';
   closeButton.classList.add('close-button');
@@ -171,7 +179,7 @@ function openFullScreen() {
 
   document.body.appendChild(fullScreenView);
 
-  // Add event listener for zooming
+  // การซูมภาพเต็มหน้าจอ
   fullScreenImage.addEventListener('click', function () {
     if (fullScreenImage.style.cursor === 'zoom-in') {
       fullScreenImage.style.cursor = 'zoom-out';
@@ -181,8 +189,7 @@ function openFullScreen() {
   });
 }
 
-
-// Add this function to your existing JavaScript
+// ฟังก์ชันสำหรับปิดดูภาพเต็มหน้าจอ
 function closeFullScreen() {
   var fullScreenView = document.querySelector('.full-screen-view');
   if (fullScreenView) {
@@ -190,12 +197,7 @@ function closeFullScreen() {
   }
 }
 
-
 document.addEventListener('DOMContentLoaded', function () {
-  // Existing code...
-
-  // Add this line to attach the click event for fullscreen
+  // คลิกเพื่อดูเต็มหน้าจอ
   document.getElementById('result-image').addEventListener('click', openFullScreen);
-
-  // Existing code...
 });
